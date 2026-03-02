@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+
+// --- Palette ---
+$bg: #f5f2ed; // warm parchment
+$surface: #fdfbf8; // soft white card
+$surface-2: #eeeae3; // subtle divider/hover
+$ink: #2c2a27; // near-black, warm
+$ink-muted: #8c8680; // secondary text
+$accent: #7c6f5b; // warm taupe
+$accent-soft: #c9bfb0; // muted accent for borders
+$gold: #b89d6e; // whisper of gold for the button
+
+// --- Base ---
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: $bg;
+  color: $ink;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+// --- Container ---
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 28px 100px;
+}
+
+// --- Post Idea Button ---
+.postIdeabtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 56px;
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    background: transparent;
+    color: $accent;
+    border: 1.5px solid $gold;
+    padding: 11px 28px;
+    font-family: "DM Sans", sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    transition:
+      background 0.25s,
+      color 0.25s,
+      transform 0.15s;
+    position: relative;
+    overflow: hidden;
+
+    // shimmer line on hover
+    &::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: $gold;
+      opacity: 0;
+      transition: opacity 0.25s;
+      z-index: -1;
+    }
+
+    &:hover {
+      color: $surface;
+      background: $gold;
+      transform: translateY(-1px);
+      box-shadow: 0 6px 24px rgba($gold, 0.25);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
+}
+
+// --- Idea Cards Grid ---
+.ideaCard {
+  background: $surface;
+  border: 1px solid $accent-soft;
+  border-radius: 6px;
+  padding: 32px 36px;
+  margin-bottom: 20px;
+  position: relative;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease,
+    border-color 0.2s;
+
+  // left accent line
+  &::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 20%;
+    height: 60%;
+    width: 3px;
+    background: linear-gradient(to bottom, transparent, $gold, transparent);
+    border-radius: 0 2px 2px 0;
+    opacity: 0;
+    transition: opacity 0.25s;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba($ink, 0.07);
+    border-color: $gold;
+
+    &::before {
+      opacity: 1;
+    }
+  }
+
+  h3 {
+    font-family: "Lora", serif;
+    font-size: 20px;
+    font-weight: 500;
+    color: $ink;
+    margin-bottom: 10px;
+    line-height: 1.35;
+  }
+
+  p {
+    font-size: 14px;
+    color: $ink-muted;
+    line-height: 1.8;
+    font-weight: 300;
+  }
+}
+
+// --- Post Idea Form Card ---
+.postIdeaCard {
+  max-width: 600px;
+  margin: 72px auto;
+  background: $surface;
+  border: 1px solid $accent-soft;
+  border-radius: 6px;
+  padding: 48px 52px 52px;
+  box-shadow: 0 8px 40px rgba($ink, 0.05);
+
+  .heading {
+    margin-bottom: 36px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid $surface-2;
+
+    h2 {
+      font-family: "Lora", serif;
+      font-size: 26px;
+      font-weight: 500;
+      color: $ink;
+      letter-spacing: -0.3px;
+
+      // small gold dot after title
+      &::after {
+        content: " ·";
+        color: $gold;
+      }
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    label {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $ink-muted;
+      margin-top: 16px;
+      margin-bottom: 2px;
+
+      &:first-of-type {
+        margin-top: 0;
+      }
+    }
+
+    input[type="text"] {
+      background: $bg;
+      border: 1px solid $accent-soft;
+      border-radius: 4px;
+      padding: 13px 16px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      color: $ink;
+      outline: none;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+      width: 100%;
+
+      &::placeholder {
+        color: lighten($ink-muted, 15%);
+      }
+
+      &:focus {
+        border-color: $gold;
+        box-shadow: 0 0 0 3px rgba($gold, 0.12);
+        background: $surface;
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 28px;
+      align-self: flex-end;
+      background: $gold;
+      color: $surface;
+      border: none;
+      padding: 13px 36px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition:
+        background 0.2s,
+        transform 0.15s,
+        box-shadow 0.2s;
+
+      &:hover {
+        background: darken($gold, 8%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba($gold, 0.3);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}

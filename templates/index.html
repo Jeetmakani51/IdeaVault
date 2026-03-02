@@ -1,0 +1,18 @@
+{% extends 'base.html' %} {% block title %}
+<title>IdeaVault</title>
+{% endblock %} {% block body %}
+<div class="container">
+  <div class="postIdeabtn">
+    <a href="/add">
+      <button>Post Idea</button>
+    </a>
+  </div>
+  {% for idea in ideas %}
+  <div class="ideaCard">
+    <h3>{{ idea.title }}</h3>
+    <p>{{ idea.description }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %} {% block title %}
+<title>Post</title>
+{% endblock %} {% block body %}
+<div class="postIdeaCard">
+  <div class="heading">
+    <h2>Post New Idea</h2>
+  </div>
+  <form method="POST">
+    <label for="text">Title</label>
+    <input
+      type="text"
+      name="title"
+      id="TitlePost"
+      placeholder="Enter Your Idea Title"
+    />
+    <label for="text">Description</label>
+    <input
+      type="text"
+      name="description"
+      id="DescPost"
+      placeholder="Describe your idea in detail"
+    />
+    <button type="submit">Create Idea</button>
+  </form>
+</div>
+
+{% endblock %}

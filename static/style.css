@@ -1,0 +1,201 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap");
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #f5f2ed;
+  color: #2c2a27;
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 72px 28px 100px;
+}
+
+.postIdeabtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 56px;
+}
+.postIdeabtn a {
+  text-decoration: none;
+}
+.postIdeabtn button {
+  background: transparent;
+  color: #7c6f5b;
+  border: 1.5px solid #b89d6e;
+  padding: 11px 28px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.25s, color 0.25s, transform 0.15s;
+  position: relative;
+  overflow: hidden;
+}
+.postIdeabtn button::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: #b89d6e;
+  opacity: 0;
+  transition: opacity 0.25s;
+  z-index: -1;
+}
+.postIdeabtn button:hover {
+  color: #fdfbf8;
+  background: #b89d6e;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 24px rgba(184, 157, 110, 0.25);
+}
+.postIdeabtn button:active {
+  transform: translateY(0);
+}
+
+.ideaCard {
+  background: #fdfbf8;
+  border: 1px solid #c9bfb0;
+  border-radius: 6px;
+  padding: 32px 36px;
+  margin-bottom: 20px;
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s;
+}
+.ideaCard::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 20%;
+  height: 60%;
+  width: 3px;
+  background: linear-gradient(to bottom, transparent, #b89d6e, transparent);
+  border-radius: 0 2px 2px 0;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.ideaCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 40px rgba(44, 42, 39, 0.07);
+  border-color: #b89d6e;
+}
+.ideaCard:hover::before {
+  opacity: 1;
+}
+.ideaCard h3 {
+  font-family: "Lora", serif;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2c2a27;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+.ideaCard p {
+  font-size: 14px;
+  color: #8c8680;
+  line-height: 1.8;
+  font-weight: 300;
+}
+
+.postIdeaCard {
+  max-width: 600px;
+  margin: 72px auto;
+  background: #fdfbf8;
+  border: 1px solid #c9bfb0;
+  border-radius: 6px;
+  padding: 48px 52px 52px;
+  box-shadow: 0 8px 40px rgba(44, 42, 39, 0.05);
+}
+.postIdeaCard .heading {
+  margin-bottom: 36px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eeeae3;
+}
+.postIdeaCard .heading h2 {
+  font-family: "Lora", serif;
+  font-size: 26px;
+  font-weight: 500;
+  color: #2c2a27;
+  letter-spacing: -0.3px;
+}
+.postIdeaCard .heading h2::after {
+  content: " ·";
+  color: #b89d6e;
+}
+.postIdeaCard form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.postIdeaCard form label {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8c8680;
+  margin-top: 16px;
+  margin-bottom: 2px;
+}
+.postIdeaCard form label:first-of-type {
+  margin-top: 0;
+}
+.postIdeaCard form input[type=text] {
+  background: #f5f2ed;
+  border: 1px solid #c9bfb0;
+  border-radius: 4px;
+  padding: 13px 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: #2c2a27;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  width: 100%;
+}
+.postIdeaCard form input[type=text]::-moz-placeholder {
+  color: rgb(176.3533057851, 172.25, 168.1466942149);
+}
+.postIdeaCard form input[type=text]::placeholder {
+  color: rgb(176.3533057851, 172.25, 168.1466942149);
+}
+.postIdeaCard form input[type=text]:focus {
+  border-color: #b89d6e;
+  box-shadow: 0 0 0 3px rgba(184, 157, 110, 0.12);
+  background: #fdfbf8;
+}
+.postIdeaCard form button[type=submit] {
+  margin-top: 28px;
+  align-self: flex-end;
+  background: #b89d6e;
+  color: #fdfbf8;
+  border: none;
+  padding: 13px 36px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.postIdeaCard form button[type=submit]:hover {
+  background: rgb(169.9722222222, 138.3222222222, 83.2277777778);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(184, 157, 110, 0.3);
+}
+.postIdeaCard form button[type=submit]:active {
+  transform: translateY(0);
+}/*# sourceMappingURL=style.css.map */
