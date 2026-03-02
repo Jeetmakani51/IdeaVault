@@ -73,3 +73,11 @@ python app.py
 The app will run on:
 
 http://127.0.0.1:5000/
+
+
+<img width="2864" height="1479" alt="Screenshot 2026-03-02 233016" src="https://github.com/user-attachments/assets/d33b1937-238b-4376-9ac3-b5db00eccd4c" />
+
+<img width="2820" height="1543" alt="Screenshot 2026-03-02 233034" src="https://github.com/user-attachments/assets/9f85506d-bf19-4dca-b4ad-cec5d6117109" />
+
+<img width="2839" height="1530" alt="Screenshot 2026-03-02 233144" src="https://github.com/user-attachments/assets/fa24e7d3-5390-4c06-8bb3-907318acb273" />
+
