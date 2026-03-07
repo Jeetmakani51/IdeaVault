@@ -11,6 +11,9 @@
   <div class="ideaCard">
     <h3>{{ idea.title }}</h3>
     <p>{{ idea.description }}</p>
+    <a href="/comment/{{ idea.id }}">
+      <i class="fa-regular fa-comment"></i>
+    </a>
   </div>
   {% endfor %}
 </div>

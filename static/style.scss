@@ -247,3 +247,205 @@ body {
     }
   }
 }
+
+// comment scss
+
+.commentPage {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 28px 100px;
+
+  // Idea header at top of comment page
+  .ideaHeader {
+    margin-bottom: 52px;
+    padding-bottom: 32px;
+    border-bottom: 1px solid $surface-2;
+
+    h2 {
+      font-family: "Lora", serif;
+      font-size: 32px;
+      font-weight: 500;
+      color: $ink;
+      line-height: 1.25;
+      letter-spacing: -0.4px;
+      margin-bottom: 16px;
+
+      &::before {
+        content: "✦ ";
+        font-size: 14px;
+        color: $gold;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+    }
+
+    p {
+      font-size: 15px;
+      color: $ink-muted;
+      line-height: 1.85;
+      font-weight: 300;
+      max-width: 580px;
+    }
+  }
+
+  // Comments section heading
+  .commentsHeading {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 28px;
+
+    h3 {
+      font-family: "DM Sans", sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: $ink-muted;
+    }
+
+    // horizontal rule after heading
+    &::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: $surface-2;
+    }
+  }
+
+  // Individual comment bubble
+  .commentBubble {
+    background: $surface;
+    border: 1px solid $accent-soft;
+    border-radius: 6px;
+    padding: 20px 24px;
+    margin-bottom: 12px;
+    position: relative;
+    transition: border-color 0.2s;
+
+    &::before {
+      content: '"';
+      position: absolute;
+      top: 10px;
+      right: 18px;
+      font-family: "Lora", serif;
+      font-size: 40px;
+      color: $surface-2;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    p {
+      font-size: 14px;
+      color: $ink;
+      line-height: 1.8;
+      font-weight: 300;
+      position: relative;
+      z-index: 1;
+    }
+
+    &:hover {
+      border-color: $accent-soft;
+    }
+  }
+
+  // No comments yet
+  .noComments {
+    text-align: center;
+    padding: 36px 0;
+    color: $ink-muted;
+    font-family: "Lora", serif;
+    font-style: italic;
+    font-size: 15px;
+    border: 1px dashed $accent-soft;
+    border-radius: 6px;
+    margin-bottom: 12px;
+  }
+
+  // Add comment form
+  .commentForm {
+    margin-top: 40px;
+    background: $surface;
+    border: 1px solid $accent-soft;
+    border-radius: 6px;
+    padding: 28px 32px 32px;
+
+    .formLabel {
+      display: block;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: $ink-muted;
+      margin-bottom: 12px;
+    }
+
+    textarea {
+      width: 100%;
+      background: $bg;
+      border: 1px solid $accent-soft;
+      border-radius: 4px;
+      padding: 14px 16px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 14px;
+      color: $ink;
+      resize: vertical;
+      min-height: 110px;
+      outline: none;
+      transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+      line-height: 1.7;
+
+      &::placeholder {
+        color: lighten($ink-muted, 15%);
+      }
+
+      &:focus {
+        border-color: $gold;
+        box-shadow: 0 0 0 3px rgba($gold, 0.12);
+        background: $surface;
+      }
+    }
+
+    button[type="submit"] {
+      margin-top: 16px;
+      float: right;
+      background: $gold;
+      color: $surface;
+      border: none;
+      padding: 12px 32px;
+      font-family: "DM Sans", sans-serif;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border-radius: 2px;
+      cursor: pointer;
+      transition:
+        background 0.2s,
+        transform 0.15s,
+        box-shadow 0.2s;
+
+      &:hover {
+        background: darken($gold, 8%);
+        transform: translateY(-1px);
+        box-shadow: 0 6px 20px rgba($gold, 0.28);
+      }
+
+      &:active {
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+// --- Empty state
+.empty {
+  text-align: center;
+  padding: 80px 0;
+  color: $ink-muted;
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 18px;
+}

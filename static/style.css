@@ -198,4 +198,175 @@ body {
 }
 .postIdeaCard form button[type=submit]:active {
   transform: translateY(0);
+}
+
+.commentPage {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 72px 28px 100px;
+}
+.commentPage .ideaHeader {
+  margin-bottom: 52px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid #eeeae3;
+}
+.commentPage .ideaHeader h2 {
+  font-family: "Lora", serif;
+  font-size: 32px;
+  font-weight: 500;
+  color: #2c2a27;
+  line-height: 1.25;
+  letter-spacing: -0.4px;
+  margin-bottom: 16px;
+}
+.commentPage .ideaHeader h2::before {
+  content: "✦ ";
+  font-size: 14px;
+  color: #b89d6e;
+  vertical-align: middle;
+  margin-right: 4px;
+}
+.commentPage .ideaHeader p {
+  font-size: 15px;
+  color: #8c8680;
+  line-height: 1.85;
+  font-weight: 300;
+  max-width: 580px;
+}
+.commentPage .commentsHeading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.commentPage .commentsHeading h3 {
+  font-family: "DM Sans", sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #8c8680;
+}
+.commentPage .commentsHeading::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #eeeae3;
+}
+.commentPage .commentBubble {
+  background: #fdfbf8;
+  border: 1px solid #c9bfb0;
+  border-radius: 6px;
+  padding: 20px 24px;
+  margin-bottom: 12px;
+  position: relative;
+  transition: border-color 0.2s;
+}
+.commentPage .commentBubble::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  right: 18px;
+  font-family: "Lora", serif;
+  font-size: 40px;
+  color: #eeeae3;
+  line-height: 1;
+  pointer-events: none;
+}
+.commentPage .commentBubble p {
+  font-size: 14px;
+  color: #2c2a27;
+  line-height: 1.8;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+.commentPage .commentBubble:hover {
+  border-color: #c9bfb0;
+}
+.commentPage .noComments {
+  text-align: center;
+  padding: 36px 0;
+  color: #8c8680;
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 15px;
+  border: 1px dashed #c9bfb0;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+.commentPage .commentForm {
+  margin-top: 40px;
+  background: #fdfbf8;
+  border: 1px solid #c9bfb0;
+  border-radius: 6px;
+  padding: 28px 32px 32px;
+}
+.commentPage .commentForm .formLabel {
+  display: block;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #8c8680;
+  margin-bottom: 12px;
+}
+.commentPage .commentForm textarea {
+  width: 100%;
+  background: #f5f2ed;
+  border: 1px solid #c9bfb0;
+  border-radius: 4px;
+  padding: 14px 16px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 14px;
+  color: #2c2a27;
+  resize: vertical;
+  min-height: 110px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  line-height: 1.7;
+}
+.commentPage .commentForm textarea::-moz-placeholder {
+  color: rgb(176.3533057851, 172.25, 168.1466942149);
+}
+.commentPage .commentForm textarea::placeholder {
+  color: rgb(176.3533057851, 172.25, 168.1466942149);
+}
+.commentPage .commentForm textarea:focus {
+  border-color: #b89d6e;
+  box-shadow: 0 0 0 3px rgba(184, 157, 110, 0.12);
+  background: #fdfbf8;
+}
+.commentPage .commentForm button[type=submit] {
+  margin-top: 16px;
+  float: right;
+  background: #b89d6e;
+  color: #fdfbf8;
+  border: none;
+  padding: 12px 32px;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+}
+.commentPage .commentForm button[type=submit]:hover {
+  background: rgb(169.9722222222, 138.3222222222, 83.2277777778);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(184, 157, 110, 0.28);
+}
+.commentPage .commentForm button[type=submit]:active {
+  transform: translateY(0);
+}
+
+.empty {
+  text-align: center;
+  padding: 80px 0;
+  color: #8c8680;
+  font-family: "Lora", serif;
+  font-style: italic;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */
